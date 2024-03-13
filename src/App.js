@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import floresHeader from './img/Grupo03.webp'
+import Header from './Components/Header';
+import Content from './Components/Content';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App text-center text-focus-in">
+        {/* Imagenes Decoracion Header*/}
+        <img width="100px" src={floresHeader} align="left"/>
+        <img className="p-0 m-0" width="100px" src={floresHeader} align="right" style={{transform: 'scaleX(-1)'}}/>
+
+        {/* Header Layout */}
+        <Header/>
+
+        <Content/>
     </div>
   );
 }

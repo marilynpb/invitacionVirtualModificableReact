@@ -1,38 +1,423 @@
-.App {
+@font-face {
+  font-family: 'Rosela';
+  src: url('./fonts/rosela_4/Rosela.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: '1';
+  src: url('./fonts/moora_light/MOORA\ LIGHT\ REGULER.otf') format('truetype');
+}
+@font-face {
+  font-family: '2';
+  src: url('./fonts/rosela_4/lovely_balloon/Lovely\ Balloon.ttf') format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+  }
+
+ .App{
+    overflow-x: hidden!important;
+    background-color: rgb(249, 245, 249);
+    font-family: '1', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+  }
+
+  .container-background{
+    background-image: url('./img/fondo.webp');
+    background-size: cover;
+    color: #b5976b;
+    overflow-x: hidden;
+  }
+  
+  .contenedor{
+    width: 100%;
+    height: 100vh;
+    background-image: url('./img/quinceañeraDibujo_upscayl_4x_realesrgan-x4plus.png');
+    background-position:unset;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #f7f5f2;
+  }
+
+  .layout{
+    width: 100%;
+    height: 100%;
+    background-color:rgba(250, 192, 239, 0.493);
+  }
+
+  .decoracion-flores{
+    width: 200px;
+    height: auto;
+  }
+
+  .main {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+  }
+  /*
+  .d1 {
+    position: absolute;
+    background-image: url('./img/mariposasssss.jpg');
+    background-size: 600%;
+  
+    height: 30vh;
+    width: 15vw;
+  
+    background-position: left;
+  
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    animation: dd1 10s 1, dd12 10s 1;
+    animation-delay: 4s, 14s;
+  }
+  .d2 {
+    position: absolute;
+    background-image: url('./img/mariposasssss.jpg');
+    background-size: 390%;
+  
+    height: 50vh;
+    width: 25vw;
+  
+    background-position: left;
+    left: 10vw;
+  
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    animation: dd2 10s 2;
+    animation-delay: 4s;
+  }
+  .d3 {
+    position: absolute;
+    background-image: url('./img/mariposasssss.jpg');
+    background-size: cover;
+    overflow: hidden;
+  
+    height: 70vh;
+    width: 50vw;
+    left: 25vw;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+    background-position: center;
+  
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    animation: dd3 10s 2;
+    animation-delay: 4s;
+  }
+  .d4 {
+    position: absolute;
+    overflow: hidden;
+    background-image: url('./img/mariposasssss.jpg');
+    background-size: 370%;
+  
+    height: 75vh;
+    width: 40vw;
+    left: 60vw;
+    background-position: right;
+  
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    animation: dd4 10s 2;
+    animation-delay: 4s;
+  }*/
+  
+@media (max-width: 600px) {
+    .d1 {
+        width: 15vw;
+      }
+      .d2 {
+        width:30vw;
+      }
+      .d3 {
+        width: 75vw;
+        left: 18vw;
+      }
+      .d4 {
+        width: 40vw;
+      }
+      .contenedor{
+        background-position:center;
+      }
+}
+
+.fecha{
+  border: 1px solid #b5976b;
+  padding: 5px;
+}
+
+.parrafos{
+  font-size: 20px;
+}
+
+h1{
+  padding-top: 50vh!important;
+  color: #b5976b;
+  font-size: 35px;
+  font-family: '2', sans-serif;
+}
+
+h2, span{
+  font-family: '1', sans-serif;
+  font-weight: bold;
+}
+
+h3, .title-contador{
+    font-weight: bold;
+    font-family: '2', sans-serif;
+}
+
+span{
+  border-radius: 3px;
+}
+
+
+.contador{
+  max-width: 400px;
+  height: 400px;
+  background-image: url('./img/contador.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+button{
+  border: none;
+  background-color: rgb(250, 161, 192);
+  border-radius: 7px;
+  padding: 5px 15px;
+  width: 200px;
+  color: white;
+  font-weight: bolder;
+  font-size: 18px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+
+.tarjeta-detalles{
+  min-height: 300px!important;
+  margin-bottom: 30px;
+  background-color: white;
+  border: 1px solid #b5976b;
+  border-radius: 10px;
+  min-height: 200px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 10px;
+}
+
+
+/* Widget Form */
+.widget-container {
+  display: none;
+  position: fixed;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  padding: 20px;
+  border: 1px solid #d4d4d4;
+  z-index: 1;
+  -webkit-box-shadow: -1px 15px 300px 82px rgb(245, 156, 211);
+-moz-box-shadow: -1px 15px 300px 82px rgb(253, 171, 249);
+box-shadow: -1px 15px 300px 82px rgb(240, 150, 248);
+}
+
+.widget-content {
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+/* Mensaje agradecimiento */
+#mensajeAgradecimiento {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  padding: 20px;
+  border: 1px solid #d4d4d4;
+  z-index: 1;
+}
+
+#audioContainer {
+  display: none;
+}
+
+#toggleAudio{
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  text-align: center;
+  margin: 0%;
+  padding: 0%;
+  margin-top: 10px;
+  background-color: rgb(245, 149, 183);
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+#toggleAudio img{
+  height: 70%;
+  width: auto;
+  margin: 0%;
+  padding: 0%;
+}
+
+.lineas{
+  width: 100%;
+}
+
+
+/***************************************/
+.text-focus-in {
+  -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+          animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+/* ----------------------------------------------
+* Generated by Animista on 2024-2-9 16:58:1
+* Licensed under FreeBSD License.
+* See http://animista.net/license for more info. 
+* w: http://animista.net, t: @cssanimista
+* ---------------------------------------------- */
+
+/**
+* ----------------------------------------
+* animation text-focus-in
+* ----------------------------------------
+*/
+@-webkit-keyframes text-focus-in {
+0% {
+  -webkit-filter: blur(12px);
+          filter: blur(12px);
+  opacity: 0;
+}
+100% {
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+  opacity: 1;
+}
+}
+@keyframes text-focus-in {
+0% {
+  -webkit-filter: blur(12px);
+          filter: blur(12px);
+  opacity: 0;
+}
+100% {
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+  opacity: 1;
+}
+}
+
+
+/*********************/
+
+.buttonConfirmar{
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.buttonConfirmar:active {
+  transform: scale(0.96);
+}
+.buttonConfirmar:before,
+.buttonConfirmar:after {
+  position: absolute;
+  content: "";
+  width: 150%;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1000;
+  background-repeat: no-repeat;
+}
+.buttonConfirmar:before {
+  top: -70%;
+  background-image: radial-gradient(circle, rgb(250, 161, 192) 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, rgb(250, 161, 192) 20%, transparent 30%),
+    radial-gradient(circle, rgb(250, 161, 192) 20%, transparent 20%),
+    radial-gradient(circle, rgb(250, 161, 192) 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, rgb(250, 161, 192) 15%, transparent 20%),
+    radial-gradient(circle, rgb(250, 161, 192) 20%, transparent 20%),
+    radial-gradient(circle, rgb(250, 161, 192) 20%, transparent 20%),
+    radial-gradient(circle, rgb(250, 161, 192) 20%, transparent 20%),
+    radial-gradient(circle, rgb(250, 161, 192) 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+  animation: greentopBubbles ease-in-out 0.6s forwards infinite;
+}
+@keyframes greentopBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+      50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+      50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+.buttonConfirmar:after {
+  bottom: -70%;
+  background-image: radial-gradient(circle, rgb(250, 161, 192) 20%, transparent 20%),
+    radial-gradient(circle, rgb(250, 161, 192) 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, rgb(250, 161, 192) 15%, transparent 20%),
+    radial-gradient(circle, rgb(250, 161, 192) 20%, transparent 20%),
+    radial-gradient(circle, rgb(250, 161, 192) 20%, transparent 20%),
+    radial-gradient(circle, rgb(250, 161, 192) 20%, transparent 20%),
+    radial-gradient(circle, rgb(250, 161, 192) 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+  animation: greenbottomBubbles ease-in-out 0.6s forwards infinite;
+}
+@keyframes greenbottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+      105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+      110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.confirmacionExitosa{
+  display: none;
 }
 
-.App-link {
-  color: #61dafb;
+.oculta{
+  display: block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.no-scroll {
+  overflow: hidden;
 }
